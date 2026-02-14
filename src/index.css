@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --romantic-pink: #ff9a9e;
+  --romantic-red: #fecfef;
+  --deep-rose: #ff6b6b;
+  --soft-coral: #ff8e8e;
+  --glow-color: rgba(255, 107, 107, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ff6b6b 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Hearts Animation */
+.floating-heart {
+  position: absolute;
+  font-size: 24px;
+  animation: floatUp linear infinite;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Sparkle Animation */
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: sparkle 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Heart Pulse Animation */
+.pulse-heart {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Glow Effect */
+.glow-effect {
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.6),
+              0 0 40px rgba(255, 107, 107, 0.4),
+              0 0 60px rgba(255, 107, 107, 0.2);
+}
+
+/* Button Hover Glow */
+.btn-glow {
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 107, 107, 0.8),
+              0 0 60px rgba(255, 107, 107, 0.5);
+}
+
+/* Firework Particle */
+.firework-particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* No-button physics base styles */
+.no-btn-physics {
+  /* GPU acceleration */
+  will-change: left, top;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  touch-action: none; /* prevent scroll when touching the button */
+}
+
+/* Love Text Animation */
+.love-text {
+  animation: loveBounce 1s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 107, 107, 0.8),
+               0 0 40px rgba(255, 107, 107, 0.6),
+               0 0 60px rgba(255, 107, 107, 0.4);
+}
+
+@keyframes loveBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Background Glow Animation */
+.bg-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 154, 158, 0.4) 0%, transparent 70%);
+  animation: glowMove 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowMove {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Yes Button Pulse */
+.yes-pulse {
+  animation: yesPulse 2s ease-in-out infinite;
+}
+
+@keyframes yesPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 107, 107, 0.9),
+                0 0 60px rgba(255, 107, 107, 0.6);
+  }
+}
+
+/* Celebration Background */
+.celebration-bg {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ff9a9e 50%, #fecfef 100%);
+  background-size: 400% 400%;
+  animation: celebrationGradient 5s ease infinite;
+}
+
+@keyframes celebrationGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Poem Animations ────────────────────────────── */
+
+/* Each stanza / element fades + slides up */
+.poem-fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: poemReveal 0.9s ease-out forwards;
+}
+
+@keyframes poemReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stanza hover glow */
+.poem-stanza {
+  transition: text-shadow 0.4s ease;
+}
+.poem-stanza:hover {
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.5);
+}
+
+/* Closing line glowing pulse */
+.poem-glow {
+  text-shadow: 0 0 12px rgba(255, 107, 107, 0.7),
+               0 0 24px rgba(255, 107, 107, 0.5);
+  animation: poemReveal 0.9s ease-out forwards,
+             poemGlowPulse 2.5s ease-in-out 4.5s infinite;
+}
+
+@keyframes poemGlowPulse {
+  0%, 100% {
+    text-shadow: 0 0 12px rgba(255, 107, 107, 0.7),
+                 0 0 24px rgba(255, 107, 107, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 24px rgba(255, 107, 107, 1),
+                 0 0 48px rgba(255, 107, 107, 0.7),
+                 0 0 72px rgba(255, 107, 107, 0.4);
+  }
+}
+
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Poem container subtle gradient overlay at bottom */
+.poem-container {
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .floating-heart {
+    font-size: 18px;
+  }
+  
+  .bg-glow {
+    width: 300px;
+    height: 300px;
+  }
+}
